@@ -9,4 +9,4 @@ COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD ["/usr/local/bin/npm", "start"]
+CMD ["/usr/local/bin/yarn", "start"]

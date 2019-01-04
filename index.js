@@ -38,7 +38,7 @@ function base64ToFile(encodedImage) {
     });
 }
 
-// {"image": "base64encoded_message"}
+// {"image":"base64encoded_message"}
 app.post('/', async (req, res) => {
     const result = await base64ToFile(req.body.image);
 
