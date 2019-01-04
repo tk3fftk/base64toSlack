@@ -1,0 +1,27 @@
+{
+  "name": "base64toslack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": "git+https://github.com/tk3fftk/base64toSlack.git",
+  "author": "tk3fftk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tk3fftk/base64toSlack/issues"
+  },
+  "homepage": "https://github.com/tk3fftk/base64toSlack#readme",
+  "dependencies": {
+    "@slack/client": "^4.8.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-screwdriver": "^4.0.0"
+  }
+}

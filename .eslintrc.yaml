@@ -1,0 +1,3 @@
+extends: screwdriver
+rules:
+  require-jsdoc: off
