@@ -40,23 +40,33 @@ function base64ToFile(encodedImage) {
 
 // {"image":"base64encoded_message"}
 app.post('/', async (req, res) => {
+    const image = req.body.image;
+
+    console.log(new Date() + ' image: ', image);
+    if (!image) {
+        res.status(200).send('image is undef');
+        console.log(new Date() + ' image is undef');
+        return;
+    }
+
     const result = await base64ToFile(req.body.image);
 
-    console.log('File stored: ', result);
+    console.log(new Date() + ' File stored: ', result);
     if (result.error) {
-        console.error('failed writing file');
+        console.error(new Date() + ' failed writing file');
         console.error(result.err);
         res.status(500).send('failed writing file');
+        return;
     }
 
     upload(result.filename)
         .then((response) => {
             // `response` contains information about the uploaded file
-            console.log('File uploaded: ', response.file.id);
+            console.log(new Date() + ' File uploaded: ', response.file.id);
             res.send('done');
         })
         .catch((err) => {
-            console.error('failed uploading to slack');
+            console.error(new Date() + ' failed uploading to slack');
             console.error(err);
             res.status(500).send('failed uploading to slack');
         });
